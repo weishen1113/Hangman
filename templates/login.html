@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-XXXXX" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+
+
+    <style>
+
+        
+    </style>
+</head>
+
+<body class="signup-body">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <div class="msg">{{ msg }}</div>
+            {{ form.csrf_token }}
+            {{ form.username.label }}
+            {{ form.username( id="username") }}
+            <i class="fas fa-user icon"></i><br>
+            {{ form.password.label }}
+            {{ form.password( id="username") }}
+            <i class="fas fa-lock icon"></i><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+        <hr>
+        <p style="text-align: center;">Create An Account?<a href="/signup">Sign Up</a></p>
+    </div>
+
+
+    <div class="link-container">
+        <a href="/guest" class="link2">Back to Main Page</a>
+    </div>
+
+
+</body>
+
+</html>

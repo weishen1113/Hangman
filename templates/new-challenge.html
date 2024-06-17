@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    
+    
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="challenge-content-wrapper">
+    <div class="two-player">
+        <div class="small-container">
+          <div class="row">
+            <div class="col-12">
+    
+<div class="challenge-container">
+    <h2>Challenge</h2>
+    <form method="POST" action="{{url_for('twoPlayerChallenge')}}" id="wordform">
+        
+        {% if error %}
+        <div class="challenge-msg">{{ error }}</div>
+    {% endif %}
+
+    {{ form.csrf_token }}
+    {{ form.word.label }}
+    {{ form.word( id="word") }}
+    {{ form.hint.label }}
+    {{ form.hint( id="hint") }}
+    {{ form.player.label }}
+    {{ form.player( id="player") }}
+        <input type="submit" value="Send Challenge" id="submitChallenge">
+    </form>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
