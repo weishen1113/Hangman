@@ -8,7 +8,8 @@ import uuid
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, DateField, IntegerField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, NumberRange
-
+import sys
+print(f"Running Python version: {sys.version}")
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
